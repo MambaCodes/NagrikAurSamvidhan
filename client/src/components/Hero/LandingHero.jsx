@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRightIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function LandingHero() {
     return (
@@ -9,11 +10,11 @@ export default function LandingHero() {
                 <div className="container py-24 lg:py-32">
                     {/* Announcement Banner */}
                     <div className="flex justify-center">
-                        <a
+                        <Link
                             className="inline-flex items-center gap-x-2 border text-sm p-1 ps-3 rounded-full transition"
-                            href="#"
+                            to="#"
                         >
-                            PRO release - Join to waitlist
+                            Spreading Constitutional Literacy
                             <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-muted-foreground/15 font-semibold text-sm">
                                 <svg
                                     className="flex-shrink-0 w-4 h-4"
@@ -30,20 +31,19 @@ export default function LandingHero() {
                                     <path d="m9 18 6-6-6-6" />
                                 </svg>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                     {/* End Announcement Banner */}
                     {/* Title */}
                     <div className="mt-5 max-w-2xl text-center mx-auto">
                         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-                            Let&apos;s Build Together
+                            Citizen & Constituion
                         </h1>
                     </div>
                     {/* End Title */}
                     <div className="mt-5 max-w-3xl text-center mx-auto">
                         <p className="text-xl text-muted-foreground">
-                            Over 10+ fully responsive, UI blocks you can drop into your Shadcn
-                            UI projects and customize to your heart&apos;s content.
+                            Gamifying the Language of the Constitution of India for the Common Man
                         </p>
                     </div>
                     {/* Buttons */}
@@ -56,9 +56,9 @@ export default function LandingHero() {
                     {/* End Buttons */}
                     <div className="mt-5 flex justify-center items-center gap-x-1 sm:gap-x-3">
                         <span className="text-sm text-muted-foreground">
-                            Package Manager:
+                            A Product Of :
                         </span>
-                        <span className="text-sm font-bold">npm </span>
+                        <span className="text-sm font-bold">Team GitNotIgnore </span>
                         <svg
                             className="h-5 w-5 text-muted-foreground"
                             width={16}
@@ -74,13 +74,13 @@ export default function LandingHero() {
                                 strokeLinecap="round"
                             />
                         </svg>
-                        <a
+                        <Link
                             className="inline-flex items-center gap-x-1 text-sm decoration-2 hover:underline font-medium"
-                            href="#"
+                            to="#"
                         >
-                            Installation Guide
+                            How it Works
                             <ChevronRightIcon className="flex-shrink-0 w-4 h-4" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
