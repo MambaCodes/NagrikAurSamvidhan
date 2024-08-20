@@ -8,9 +8,10 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export function LoginForm() {
+  const navigate = useNavigate();
   return (
     <Card className="mx-auto my-24 max-w-sm">
       <CardHeader>
@@ -39,7 +40,7 @@ export function LoginForm() {
             </div>
             <Input id="password" type="password" required />
           </div>
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full" onClick={()=>navigate("/app")}>
             Login
           </Button>
           <Button variant="outline" className="w-full">

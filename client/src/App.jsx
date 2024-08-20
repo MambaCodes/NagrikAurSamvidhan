@@ -18,6 +18,8 @@ import NotFoundError from "./pages/error/not-found"
 
 import LandingLayout from "./pages/Landing/LandingLayout"
 import LandingHome from "./pages/Landing/LandingHome"
+import MainLayout from "./pages/Main/MainLayout"
+import MainExplore from "./pages/Main/MainExplore"
 
 
 function App() {
@@ -37,6 +39,15 @@ function App() {
 
             </Route>
 
+            {/* TODO: add check to verify If user is logged in */}
+            {/* currently using "app" route for ease of access */}
+
+            {/* Main Application */}
+            <Route path="/app" element={<MainLayout />} >
+              <Route path="" element={<Navigate to="explore" />} />
+              <Route path="explore" element={<MainExplore />} />
+
+            </Route>
 
             {/* Auth */}
             <Route path="/signin" element={<LoginForm />} />
