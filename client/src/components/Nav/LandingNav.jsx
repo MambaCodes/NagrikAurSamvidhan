@@ -29,7 +29,7 @@ const LandingNav = () => {
         </li>
         <li>
           <NavLink
-            to="/features"
+            to="/how"
             className={({ isActive }) => (isActive ? 'underline' : '')}
           >
             How It Works

@@ -22,6 +22,7 @@ import MainLayout from "./pages/Main/MainLayout"
 import MainExplore from "./pages/Main/MainExplore"
 import V0About from "./components/V0/V0About"
 import LandingHow from "./components/About/LandingHow"
+import  LandingFAQ  from "./components/FAQ/LandingFAQ"
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
               <Route path="about" element={<V0About />} />
               
               <Route path="how" element={<LandingHow />} />
+              <Route path="faqs" element={<LandingFAQ />} />
 
             </Route>
 
