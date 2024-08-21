@@ -20,6 +20,8 @@ import LandingLayout from "./pages/Landing/LandingLayout"
 import LandingHome from "./pages/Landing/LandingHome"
 import MainLayout from "./pages/Main/MainLayout"
 import MainExplore from "./pages/Main/MainExplore"
+import V0About from "./components/V0/V0About"
+import LandingHow from "./components/About/LandingHow"
 
 
 function App() {
@@ -36,6 +38,10 @@ function App() {
             <Route path="/" element={<LandingLayout />} >
               <Route path="" element={<Navigate to="/home" />} />
               <Route path="home" element={<LandingHome />} />
+              
+              <Route path="about" element={<V0About />} />
+              
+              <Route path="how" element={<LandingHow />} />
 
             </Route>
 
