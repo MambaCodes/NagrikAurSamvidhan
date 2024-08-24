@@ -23,6 +23,8 @@ import MainExplore from "./pages/Main/MainExplore"
 import V0About from "./components/V0/V0About"
 import LandingHow from "./components/About/LandingHow"
 import  LandingFAQ  from "./components/FAQ/LandingFAQ"
+import  Learning  from "./components/Learn/Learning"
+import  Content  from "./components/ChapterContent/Content"
 
 
 function App() {
@@ -44,7 +46,8 @@ function App() {
               
               <Route path="how" element={<LandingHow />} />
               <Route path="faqs" element={<LandingFAQ />} />
-
+              <Route path="learn" element={<Learning />} />
+              <Route path="content" element={<Content />} />
             </Route>
 
             {/* TODO: add check to verify If user is logged in */}

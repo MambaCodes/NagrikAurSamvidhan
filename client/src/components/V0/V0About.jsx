@@ -7,28 +7,22 @@ export default function V0About() {
                     <div className="space-y-6">
                         <div>
                             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                                Hackathon Project: Streamlining Disaster Response
+                                Hackathon Project: Gamifying Constitution
                             </h1>
                             <p className="mt-4 text-muted-foreground md:text-xl">
-                                Our hackathon project aims to address the challenges faced by emergency responders during natural
-                                disasters by developing a comprehensive solution to improve coordination and information sharing.
+                            Our hackathon project is dedicated to transforming the Indian Constitution into an engaging and interactive learning experience through various games. By leveraging gamification techniques, we aim to present the fundamental principles and articles of the Constitution in a way that is both enjoyable and educational.
                             </p>
                         </div>
                         <div>
                             <h2 className="text-2xl font-bold">The Problem</h2>
                             <p className="mt-4 text-muted-foreground md:text-xl">
-                                During natural disasters, emergency responders often struggle to access real-time information about the
-                                situation on the ground, leading to delays in coordinating relief efforts. This can result in
-                                inefficient resource allocation and a slower response time, putting lives at risk.
+                            The Indian Constitution, a vital document outlining the rights and duties of every citizen, is often perceived as complex and difficult to understand, especially for younger audiences and those without a legal background. Traditional methods of teaching the Constitution can be dry and disengaging, leading to low levels of awareness and comprehension among the general public.
                             </p>
                         </div>
                         <div>
                             <h2 className="text-2xl font-bold">Our Solution</h2>
                             <p className="mt-4 text-muted-foreground md:text-xl">
-                                Our hackathon project introduces a centralized platform that integrates data from various sources,
-                                including government agencies, NGOs, and citizen-reported information. This platform provides emergency
-                                responders with a comprehensive, real-time view of the disaster situation, enabling them to make
-                                informed decisions and coordinate their efforts more effectively.
+                            Our hackathon solution is to gamify the learning of the Indian Constitution by transforming its key principles into engaging, interactive games. By using formats like quizzes, board games, and challenges, we aim to simplify complex legal concepts and make them fun to explore. This approach will not only make the content more accessible but also encourage active participation, helping users retain information better.
                             </p>
                         </div>
                     </div>
