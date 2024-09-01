@@ -46,7 +46,6 @@ function App() {
               
               <Route path="how" element={<LandingHow />} />
               <Route path="faqs" element={<LandingFAQ />} />
-              <Route path="learn" element={<Learning />} />
               <Route path="content" element={<Content />} />
             </Route>
 
@@ -57,6 +56,8 @@ function App() {
             <Route path="/app" element={<MainLayout />} >
               <Route path="" element={<Navigate to="explore" />} />
               <Route path="explore" element={<MainExplore />} />
+              <Route path="learn" element={<Learning />} />
+              <Route path="about" element={<V0About />} />
 
             </Route>
 

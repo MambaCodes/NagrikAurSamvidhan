@@ -1,5 +1,5 @@
 import React from "react";
-import { FolderGit2, CalendarIcon, GithubIcon, HomeIcon, LinkedinIcon, MailIcon, PencilIcon, TwitterIcon } from "lucide-react";
+import { FolderGit2, CalendarIcon, GithubIcon, HomeIcon, LinkedinIcon, MailIcon, PencilIcon, TwitterIcon, GraduationCap, Brain, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -15,10 +15,13 @@ import { Link } from "react-router-dom";
 import { PersonIcon } from "@radix-ui/react-icons";
 
 
+
 const DATA = {
     navbar: [
-        { href: "/home", icon: HomeIcon, label: "Home" },
-        { href: "/about", icon: FolderGit2, label: "About Project" },
+        { href: "/app/explore", icon: HomeIcon, label: "Explore" },
+        { href: "/app/learn", icon: GraduationCap, label: "Learn" },
+        { href: "/app/ai", icon: Brain, label: "Chat with AI" },
+        { href: "/app/about", icon: Info, label: "About Project" },
     ],
     contact: {
         social: {
@@ -26,16 +29,6 @@ const DATA = {
                 name: "GitHub",
                 url: "#",
                 icon: GithubIcon,
-            },
-            LinkedIn: {
-                name: "LinkedIn",
-                url: "#",
-                icon: LinkedinIcon,
-            },
-            X: {
-                name: "X",
-                url: "#",
-                icon: TwitterIcon,
             },
             email: {
                 name: "Send Email",
