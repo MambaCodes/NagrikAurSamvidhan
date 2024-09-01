@@ -1,0 +1,30 @@
+{
+	"generator_info": "Shape definitions generated with PhysicsEditor. Visit https://www.codeandweb.com/physicseditor",
+	"sand_map_8": {
+		"type": "fromPhysicsEditor",
+		"label": "sand",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "sand",
+				"isSensor": true,
+				"vertices": [
+					[ { "x":842, "y":727 }, { "x":853, "y":706 }, { "x":850, "y":673 }, { "x":839, "y":634 }, { "x":811, "y":586 }, { "x":626, "y":638 }, { "x":561, "y":668 }, { "x":821, "y":732 } ],
+					[ { "x":545, "y":724 }, { "x":561, "y":740 }, { "x":588, "y":748 }, { "x":621, "y":748 }, { "x":821, "y":732 }, { "x":561, "y":668 }, { "x":543, "y":695 } ],
+					[ { "x":778, "y":563 }, { "x":738, "y":567 }, { "x":709, "y":582 }, { "x":626, "y":638 }, { "x":811, "y":586 }, { "x":797, "y":572 } ],
+					[ { "x":584, "y":654 }, { "x":561, "y":668 }, { "x":626, "y":638 } ]
+				]
+			}
+		]
+	}
+}

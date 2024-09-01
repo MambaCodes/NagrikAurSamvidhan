@@ -1,0 +1,61 @@
+@font-face {
+    font-family: teko;
+    src: url(../teko.ttf) format("truetype")
+}
+
+* {
+    font-family: teko
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: #ffffffde;
+    background: #7bb87b;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#app {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden
+}
+
+#game-container {
+    position: fixed
+}
+
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #7bb87b
+}
+
+#loading-screen #logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: auto;
+    height: auto;
+    max-width: 20%;
+    max-height: 20%;
+    object-fit: cover
+}
+
+#loading-screen #loading-icon {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 20%;
+    max-height: 20%;
+    object-fit: cover
+}
