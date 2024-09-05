@@ -1,5 +1,5 @@
 
-export default function Component() {
+export default function Content() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
       <div className="space-y-8">

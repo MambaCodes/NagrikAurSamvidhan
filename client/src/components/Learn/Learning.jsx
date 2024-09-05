@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpenIcon } from "@heroicons/react/outline";
-export default function Component() {
+export default function Learning() {
   return (
     <div className="flex flex-col min-h-dvh bg-background">
       <header className="px-4 lg:px-6 h-14 flex items-center border-b">

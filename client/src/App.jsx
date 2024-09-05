@@ -25,6 +25,8 @@ import LandingHow from "./components/About/LandingHow"
 import  LandingFAQ  from "./components/FAQ/LandingFAQ"
 import  Learning  from "./components/Learn/Learning"
 import  Content  from "./components/ChapterContent/Content"
+import Timeline from "./components/Timeline/TimeLine"
+import Roadmap from "./components/Roadmap/RoadMap"
 
 
 function App() {
@@ -58,6 +60,9 @@ function App() {
               <Route path="explore" element={<MainExplore />} />
               <Route path="learn" element={<Learning />} />
               <Route path="about" element={<V0About />} />
+              <Route path="timeline" element={<Timeline />} />
+              <Route path="roadmap" element={<Roadmap />} />
+              
 
             </Route>
 
