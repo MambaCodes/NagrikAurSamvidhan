@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRightIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
+import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 export default function LandingHero() {
     return (
@@ -9,7 +12,20 @@ export default function LandingHero() {
             <div>
                 <div className="container py-24 lg:py-32">
                     {/* Announcement Banner */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center ">
+                        <div
+                            className={cn(
+                            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
+                            )}
+                        >
+                            <AnimatedShinyText className=" inline-flex justify-center items-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                            <span>✨ Spreading Constitutional Literacy</span>
+                            <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                            </AnimatedShinyText>
+                        </div>
+                    </div>
+                    
+                    {/* 
                         <Link
                             className="inline-flex items-center gap-x-2 border text-sm p-1 ps-3 rounded-full transition"
                             to="#"
@@ -32,7 +48,7 @@ export default function LandingHero() {
                                 </svg>
                             </span>
                         </Link>
-                    </div>
+                    </div> */}
                     {/* End Announcement Banner */}
                     {/* Title */}
                     <div className="mt-5 max-w-2xl text-center mx-auto">
