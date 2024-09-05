@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .classroom {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: orange;
+      position: fixed;
+    }
+    .board {
+      height: 300px;
+      width: 500px;
+      background-color: green;
+      margin: 184px 150px 0px 400px;
+      border: 17px rgb(10, 1, 1) solid;
+      border-radius: 26px;
+      position: relative;
+    }
+    .image-right {
+      position: absolute;
+      top: 50%; 
+      left: 900px; 
+      transform: translateY(-50%);
+      height: 400px;
+    }
+    #area {
+      height: 300px;
+      width: 500px;
+      background-color: transparent;
+      font-size: 50px;
+      border: none;
+      color: white;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .controls {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .controls input[type="text"] {
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      width: 400px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .btn span {
+      margin-right: 8px;
+      font-size: 24px;
+    }
+
+    /* Backdrop and loader styles */
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); 
+      backdrop-filter: blur(5px);
+      z-index: 900; 
+      display: none; 
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3; 
+      border-top: 8px solid #3498db; 
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000; 
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="classroom">
+    <div class="board">
+      <textarea id="area"  placeholder="The explanation will appear here..."></textarea>
+    </div>
+    <img src="images/teacher.png" alt="Teacher" class="image-right">
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="question" placeholder="Ask your question about the constitution">
+    <button onclick="askQuestion()" class="btn">
+      <span class="material-symbols-outlined">send</span> Submit
+    </button>
+  </div>
+  
+  <!-- Backdrop -->
+  <div id="backdrop" class="backdrop hidden"></div>
+  
+  <!-- Loader -->
+  <div id="loader" class="loader hidden"></div>
+
+  <script>
+    function askQuestion() {
+      const question = document.getElementById('question').value;
+      if (question.trim() === '') {
+        alert('Please enter a question.');
+        return;
+      }
+      document.getElementById('loader').classList.remove('hidden');
+      document.getElementById('backdrop').classList.remove('hidden');
+      
+      fetch('http://127.0.0.1:5000/api/ask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ question }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('loader').classList.add('hidden');
+        document.getElementById('backdrop').classList.add('hidden');
+        
+        if (data.success) {
+          displayWordsInBatchesWithVoice(data.answer);
+        } else {
+          alert('Error fetching response. Please try again.');
+        }
+      })
+      .catch(error => {
+        // Hide loader and backdrop
+        document.getElementById('loader').classList.add('hidden');
+        document.getElementById('backdrop').classList.add('hidden');
+        
+        console.error('Error:', error);
+        alert('Error fetching response. Please try again.');
+      });
+    }
+
+    // Function to display words in batches with voice assistance
+    function displayWordsInBatchesWithVoice(text) {
+      const filteredText = text.replace(/\*/g, '.');
+      const words = filteredText.split(' ');
+      const textArea = document.getElementById('area');
+      textArea.value = '';
+
+      let index = 0;
+      const batchSize = 20; 
+      function speakWords(wordsBatch) {
+        const utterance = new SpeechSynthesisUtterance(wordsBatch.join(' '));
+        utterance.onend = () => {
+          index += batchSize;
+          if (index < words.length) {
+            showNextBatch();
+          }
+        };
+        const voices = speechSynthesis.getVoices();
+        const femaleVoice = voices.find(voice => voice.name.includes('Google UK English Female')) || voices.find(voice => voice.gender === 'female');
+        if (femaleVoice) {
+          utterance.voice = femaleVoice;
+        }
+        
+        speechSynthesis.speak(utterance);
+      }
+      function showNextBatch() {
+        const currentBatch = words.slice(index, index + batchSize);
+        textArea.value = currentBatch.join(' ');
+        speakWords(currentBatch);
+      }
+      showNextBatch();
+    }
+  </script>
+</body>
+</html>

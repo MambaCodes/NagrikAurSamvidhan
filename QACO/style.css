@@ -1,0 +1,70 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.classroom {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: orange;
+  position: fixed;
+}
+
+.board {
+  height: 300px;
+  width: 500px;
+  background-color: green;
+  margin: 184px 150px 400px 500px;
+  border: 17px rgb(10, 1, 1) solid;
+  border-radius: 26px;
+  position: relative;
+}
+
+.image-right {
+  position: absolute;
+  top: 20%; 
+  left: calc(420px + 5px); 
+}
+
+#area {
+  height: 300px;
+  width: 500px;
+  background-color: transparent;
+  font-size: 50px;
+ 
+  
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls input[type="text"] {
+  padding: 10px;
+  font-size: 20px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn span {
+  margin-right: 8px;
+  font-size: 24px;
+}
