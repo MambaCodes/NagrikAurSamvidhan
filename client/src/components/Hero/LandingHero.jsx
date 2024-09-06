@@ -12,43 +12,21 @@ export default function LandingHero() {
             <div>
                 <div className="container py-24 lg:py-32">
                     {/* Announcement Banner */}
-                    <div className="flex justify-center ">
+                    
+                    {/* Shiny Text -> Visible in Desktop Viewport Only */}
+                    <div className="hidden md:flex justify-center ">
                         <div
                             className={cn(
                             "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
                             )}
                         >
-                            <AnimatedShinyText className=" inline-flex justify-center items-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                            <AnimatedShinyText className="inline-flex justify-center items-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
                             <span>✨ Spreading Constitutional Literacy</span>
                             <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                             </AnimatedShinyText>
                         </div>
                     </div>
                     
-                    {/* 
-                        <Link
-                            className="inline-flex items-center gap-x-2 border text-sm p-1 ps-3 rounded-full transition"
-                            to="#"
-                        >
-                            Spreading Constitutional Literacy
-                            <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-muted-foreground/15 font-semibold text-sm">
-                                <svg
-                                    className="flex-shrink-0 w-4 h-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="m9 18 6-6-6-6" />
-                                </svg>
-                            </span>
-                        </Link>
-                    </div> */}
                     {/* End Announcement Banner */}
                     {/* Title */}
                     <div className="mt-5 max-w-2xl text-center mx-auto">
@@ -57,6 +35,22 @@ export default function LandingHero() {
                         </h1>
                     </div>
                     {/* End Title */}
+                    
+                    {/* Shiny Text -> Visible in Mobile Viewport Only */}
+                    <div className="flex md:hidden justify-center mt-2">
+                        <div
+                            className={cn(
+                            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
+                            )}
+                        >
+                            <AnimatedShinyText className="text-xs inline-flex justify-center items-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                            <span>✨ Spreading Constitutional Literacy</span>
+                            <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                            </AnimatedShinyText>
+                        </div>
+                    </div>
+                    
+                    
                     <div className="mt-5 max-w-3xl text-center mx-auto">
                         <p className="text-xl text-muted-foreground">
                             Gamifying the Language of the Constitution of India for the Common Man
