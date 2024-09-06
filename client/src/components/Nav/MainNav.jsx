@@ -27,12 +27,12 @@ const DATA = {
         social: {
             GitHub: {
                 name: "GitHub",
-                url: "#",
+                url: "https://github.com/MambaCodes/NagrikAurSamvidhan/tree/main",
                 icon: GithubIcon,
             },
             email: {
                 name: "Send Email",
-                url: "#",
+                url: "mailto:themambacodes@gmail.com",
                 icon: MailIcon,
             },
         },
@@ -71,11 +71,12 @@ export function MainNav() {
                             <Tooltip>
                                 <TooltipTrigger asChild>
                                     <Link
-                                        href={social.url}
+                                        to={social.url}
                                         className={cn(
                                             buttonVariants({ variant: "ghost", size: "icon" }),
                                             "size-12 rounded-full",
                                         )}
+                                        target="_blank"
                                     >
                                         <social.icon className="size-4" />
                                     </Link>
