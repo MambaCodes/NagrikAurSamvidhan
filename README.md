@@ -42,7 +42,7 @@ To get the project up and running, you'll need to set up three components: the c
 
 1. Open another terminal and navigate to the `server/genui` directory:
     ```bash
-    cd server/genui
+    cd server/genai
     ```
 
 2. Set up a Python virtual environment:
@@ -67,7 +67,7 @@ To get the project up and running, you'll need to set up three components: the c
     pip install -r requirements.txt
     ```
 
-5. Create a `.env` file in the same directory and add your Gemini API key to it.
+5. Create a `.env` file in the same directory and add your Gemini API key to it. ( use the provided .env.template & rename it to .env)
 
 6. Start the Flask server:
     ```bash
