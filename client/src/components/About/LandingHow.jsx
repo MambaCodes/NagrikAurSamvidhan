@@ -1,6 +1,5 @@
-
-import { Card, CardContent } from "@/components/ui/card"
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Component() {
   return (
@@ -35,9 +34,12 @@ export default function Component() {
               />
             </div>
             <div className="mt-6 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">How It Works</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                How It Works
+              </h2>
               <p className="mt-4 text-muted-foreground md:text-xl">
-                Discover the power of our app and how it can transform your experience.
+                Discover the power of our app and how it can transform your
+                experience.
               </p>
             </div>
           </div>
@@ -46,9 +48,12 @@ export default function Component() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Games Available</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+              Games Available
+            </h2>
             <p className="mt-4 text-muted-foreground md:text-xl">
-              Explore our wide range of exciting games and find your new favorite.
+              Explore our wide range of exciting games and find your new
+              favorite.
             </p>
             <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
               <Card>
@@ -56,7 +61,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Chess</h3>
-                    <p className="text-muted-foreground">Test your strategic skills.</p>
+                    <p className="text-muted-foreground">
+                      Test your strategic skills.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -65,7 +72,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Sudoku</h3>
-                    <p className="text-muted-foreground">Sharpen your logical thinking.</p>
+                    <p className="text-muted-foreground">
+                      Sharpen your logical thinking.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -74,7 +83,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Trivia</h3>
-                    <p className="text-muted-foreground">Test your knowledge and have fun.</p>
+                    <p className="text-muted-foreground">
+                      Test your knowledge and have fun.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -83,7 +94,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Tic Tac Toe</h3>
-                    <p className="text-muted-foreground">Classic game of strategy and wit.</p>
+                    <p className="text-muted-foreground">
+                      Classic game of strategy and wit.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -92,7 +105,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Hangman</h3>
-                    <p className="text-muted-foreground">Guess the word and save the man.</p>
+                    <p className="text-muted-foreground">
+                      Guess the word and save the man.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -101,7 +116,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Wordle</h3>
-                    <p className="text-muted-foreground">Guess the daily word.</p>
+                    <p className="text-muted-foreground">
+                      Guess the daily word.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -110,7 +127,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Tetris</h3>
-                    <p className="text-muted-foreground">Fit the falling blocks.</p>
+                    <p className="text-muted-foreground">
+                      Fit the falling blocks.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -119,7 +138,9 @@ export default function Component() {
                   <GamepadIcon className="h-10 w-10 text-primary" />
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Minesweeper</h3>
-                    <p className="text-muted-foreground">Uncover the mines without detonating them.</p>
+                    <p className="text-muted-foreground">
+                      Uncover the mines without detonating them.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -130,28 +151,38 @@ export default function Component() {
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Powered by LLM</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+              Powered by LLM
+            </h2>
             <p className="mt-4 text-muted-foreground md:text-xl">
-              Discover how our app leverages the power of large language models to enhance your experience.
+              Experience the Future of Learning
             </p>
             <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
               <Card>
                 <CardContent className="p-6">
-                  <XIcon className="h-10 w-10 text-primary" />
-                  <h3 className="mt-4 text-lg font-semibold">Personalized Recommendations</h3>
+                  {/* <XIcon className="h-10 w-10 text-primary" /> */}
+                  <h3 className="mt-4 text-lg font-semibold">
+                    Smart Recommendations:
+                  </h3>
                   <p className="mt-2 text-muted-foreground">
-                    Our LLM-powered recommendation engine suggests the perfect games for you based on your preferences
-                    and playing history.
+                    Our advanced LLM-driven recommendation system curates
+                    personalized game suggestions based on your unique
+                    preferences and past activities, ensuring you always find
+                    the perfect game to match your interests.
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6">
-                  <XIcon className="h-10 w-10 text-primary" />
-                  <h3 className="mt-4 text-lg font-semibold">Intelligent Gameplay Assistance</h3>
+                  {/* <XIcon className="h-10 w-10 text-primary" /> */}
+                  <h3 className="mt-4 text-lg font-semibold">
+                    Real-Time Gameplay Support:
+                  </h3>
                   <p className="mt-2 text-muted-foreground">
-                    Our LLM-powered game assistants provide real-time hints and strategies to help you improve your
-                    skills and enjoy the games even more.
+                    Benefit from intelligent game assistants powered by large
+                    language models. They offer tailored hints and strategies,
+                    helping you enhance your skills and maximize your enjoyment
+                    in real-time.
                   </p>
                 </CardContent>
               </Card>
@@ -160,7 +191,7 @@ export default function Component() {
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 function GamepadIcon(props) {
@@ -183,9 +214,8 @@ function GamepadIcon(props) {
       <line x1="18" x2="18.01" y1="11" y2="11" />
       <rect width="20" height="12" x="2" y="6" rx="2" />
     </svg>
-  )
+  );
 }
-
 
 function XIcon(props) {
   return (
@@ -204,5 +234,5 @@ function XIcon(props) {
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
     </svg>
-  )
+  );
 }
