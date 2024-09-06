@@ -15,10 +15,10 @@ const catSpan = document.querySelector(".category span");
 const wordUrl = "https://api.datamuse.com/words?rel_trg=";
 const pokeUrl = "https://pokeapi.co/api/v2/pokemon/?limit=200";
 
-import { answers } from './data.js';
+import { answers } from "./data.js";
 
 let words = [];
-let statement =[];
+let statement = [];
 let data = undefined;
 let current = 0;
 let wordArray;
@@ -82,7 +82,7 @@ const getRandomWord = () => {
 
 		let currentWord = words[current].toUpperCase().split("");
 		let currentstat = statement[current];
-		question.innerText= currentstat;
+		question.innerText = currentstat;
 		words.splice(current, 1);
 		return currentWord;
 	} else {
@@ -319,7 +319,10 @@ const checkAnswer = (value) => {
 			if (allowAudio) correctAudio.play();
 			increaseScore(10);
 			updateBestScore();
-			if (Object.keys(hidden).length === 0 && hidden.constructor === Object) {
+			if (
+				Object.keys(hidden).length === 0 &&
+				hidden.constructor === Object
+			) {
 				let boxes = document.querySelectorAll("li.letter");
 				boxes.forEach((box) => {
 					if (!box.classList.contains("hyphen"))
@@ -344,9 +347,21 @@ const checkAnswer = (value) => {
 				updateCurrent();
 				if (mobileAndTabletCheck()) {
 					document.querySelector("body").classList.toggle("swipe");
-					document.addEventListener("touchstart", handleTouchStart, false);
-					document.addEventListener("touchmove", handleTouchMove, false);
-					document.addEventListener("touchend", handleTouchEnd, false);
+					document.addEventListener(
+						"touchstart",
+						handleTouchStart,
+						false
+					);
+					document.addEventListener(
+						"touchmove",
+						handleTouchMove,
+						false
+					);
+					document.addEventListener(
+						"touchend",
+						handleTouchEnd,
+						false
+					);
 				} else {
 					toggleNextButton();
 				}
@@ -370,17 +385,15 @@ const checkAnswer = (value) => {
 				let modal = document.querySelector(".gameover-modal");
 				gsap.set(".gameover-box", { scale: 1.6 });
 				gsap.set(modal, { opacity: 0 });
-				gsap
-					.timeline({ defaults: { duration: 0.25, ease: "none" } })
+				gsap.timeline({ defaults: { duration: 0.25, ease: "none" } })
 					.to(modal, { visibility: "visible" })
 					.to(modal, { opacity: 1 })
 					.to(".gameover-box", { scale: 1, opacity: 1 }, "<");
 				parallaxInstance.disable();
 			}, 2000);
 			document.querySelector(".gameover-data .score").innerText = score;
-			document.querySelector(
-				".gameover-data .best-score"
-			).innerText = bestScore;
+			document.querySelector(".gameover-data .best-score").innerText =
+				bestScore;
 		}
 	}
 };
@@ -591,7 +604,7 @@ document.querySelector(".start-game").addEventListener("click", () => {
 			// });
 
 			//our api call rn static
-			
+
 			playButton.classList.toggle("loading");
 			fillData(answers);
 			startGame();
@@ -642,7 +655,8 @@ let diffItems = document.querySelectorAll(".difficulty-list li");
 catItems.forEach((li) => {
 	li.addEventListener("mousedown", () => {
 		catButton.innerText = li.innerText;
-		catSpan.innerText = li.innerText.toUpperCase();
+		// catSpan.innerText = li.innerText.toUpperCase();
+		// catSpan.innerText = "MEDIUM";
 		category = li.innerText.toLowerCase();
 	});
 });
@@ -658,45 +672,42 @@ diffItems.forEach((li) => {
 document
 	.querySelector(".gameover-box .main-menu")
 	.addEventListener("click", () => {
-		gsap
-			.to(".gameover-box", {
-				duration: 0.25,
-				scale: 1.6,
-				opacity: 0,
-				ease: "none",
-			})
-			.then((_) => {
-				nextButtonTl.pause().progress(0);
-				catButton.disabled = false;
-				diffButton.disabled = false;
-				playButton.disabled = false;
-				showMenu();
-				setTimeout(() => {
-					document.querySelector(".gameover-modal").style.visibility =
-						"collapse";
-					parallaxInstance.enable();
-				}, 600);
-			});
+		gsap.to(".gameover-box", {
+			duration: 0.25,
+			scale: 1.6,
+			opacity: 0,
+			ease: "none",
+		}).then((_) => {
+			nextButtonTl.pause().progress(0);
+			catButton.disabled = false;
+			diffButton.disabled = false;
+			playButton.disabled = false;
+			showMenu();
+			setTimeout(() => {
+				document.querySelector(".gameover-modal").style.visibility =
+					"collapse";
+				parallaxInstance.enable();
+			}, 600);
+		});
 	});
 document
 	.querySelector(".gameover-box .play-again")
 	.addEventListener("click", () => {
-		gsap
-			.to(".gameover-box", {
-				duration: 0.25,
-				scale: 1.6,
-				opacity: 0,
-				ease: "none",
-			})
-			.then((_) => {
-				document.querySelector(".gameover-modal").style.visibility = "collapse";
-				words.length = 0;
-				words = JSON.parse(sessionStorage.getItem("currentData"));
-				statement = JSON.parse(sessionStorage.getItem("currentStats"));
-				setupGame();
-				hideLetters(wordArray);
-				createLetterElements(wordArray);
-				enableAllButtons();
-				parallaxInstance.enable();
-			});
+		gsap.to(".gameover-box", {
+			duration: 0.25,
+			scale: 1.6,
+			opacity: 0,
+			ease: "none",
+		}).then((_) => {
+			document.querySelector(".gameover-modal").style.visibility =
+				"collapse";
+			words.length = 0;
+			words = JSON.parse(sessionStorage.getItem("currentData"));
+			statement = JSON.parse(sessionStorage.getItem("currentStats"));
+			setupGame();
+			hideLetters(wordArray);
+			createLetterElements(wordArray);
+			enableAllButtons();
+			parallaxInstance.enable();
+		});
 	});
