@@ -23,10 +23,10 @@ import V0About from "./components/V0/V0About"
 import LandingHow from "./components/About/LandingHow"
 import  LandingFAQ  from "./components/FAQ/LandingFAQ"
 import  Learning  from "./components/Learn/Learning"
-import  Content  from "./components/ChapterContent/Content"
 import Timeline from "./components/Timeline/TimeLine"
 import Roadmap from "./components/Roadmap/RoadMap"
 import ChapterContent from "./components/ChapterContent/ChapterContent"
+import ChatWithAI from "./components/Chat/ChatWithAI";
 
 
 function App() {
@@ -56,9 +56,9 @@ function App() {
               <Route path="timeline" element={<Timeline />} />
               <Route path="roadmap" element={<Roadmap />} />
               <Route path="content" element={<ChapterContent />} />
-              
-
             </Route>
+            {/* Added this seprately, becuase the dock-based navbar was overlapping with this */}
+            <Route path="app/ai" element={<ChatWithAI />} />
 
             {/* Auth */}
             <Route path="/signin" element={<LoginForm />} />
