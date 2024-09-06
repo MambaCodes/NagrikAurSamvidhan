@@ -1,5 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card"
+import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 export default function Component() {
   return (
@@ -7,7 +8,7 @@ export default function Component() {
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
-            <div className="aspect-video overflow-hidden rounded-xl">
+            {/* <div className="aspect-video overflow-hidden rounded-xl">
               <iframe
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 title="Demo Video"
@@ -15,6 +16,22 @@ export default function Component() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="h-full w-full"
+              />
+            </div> */}
+            <div className="relative">
+              <HeroVideoDialog
+                className="dark:hidden block"
+                animationStyle="from-center"
+                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                thumbnailAlt="Hero Video"
+              />
+              <HeroVideoDialog
+                className="hidden dark:block"
+                animationStyle="from-center"
+                videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+                thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                thumbnailAlt="Hero Video"
               />
             </div>
             <div className="mt-6 text-center">
