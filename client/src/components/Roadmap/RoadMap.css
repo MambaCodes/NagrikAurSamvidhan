@@ -4,7 +4,7 @@
 :root {
   --roadmap-primary-color: #212121;
   --roadmap-background-color: #111;
-  --roadmap-font: sans-serif;
+  --roadmap-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Reset margin and padding only within the roadmap */
@@ -15,7 +15,7 @@
 
 /* Style the roadmap container */
 .roadmap {
-  background: var(--roadmap-background-color);
+  background: transparent;
   font-family: var(--roadmap-font);
   display: flex;
   justify-content: center;
@@ -97,7 +97,7 @@
 }
 
 .roadmap .title {
-  color: orangered;
+  color: white;
   position: relative;
 }
 

@@ -27,6 +27,7 @@ import  Learning  from "./components/Learn/Learning"
 import  Content  from "./components/ChapterContent/Content"
 import Timeline from "./components/Timeline/TimeLine"
 import Roadmap from "./components/Roadmap/RoadMap"
+import ChapterContent from "./components/ChapterContent/ChapterContent"
 
 
 function App() {
@@ -48,7 +49,6 @@ function App() {
               
               <Route path="how" element={<LandingHow />} />
               <Route path="faqs" element={<LandingFAQ />} />
-              <Route path="content" element={<Content />} />
             </Route>
 
             {/* TODO: add check to verify If user is logged in */}
@@ -62,6 +62,7 @@ function App() {
               <Route path="about" element={<V0About />} />
               <Route path="timeline" element={<Timeline />} />
               <Route path="roadmap" element={<Roadmap />} />
+              <Route path="content" element={<ChapterContent />} />
               
 
             </Route>
