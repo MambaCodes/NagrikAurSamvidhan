@@ -51,7 +51,7 @@ export function SignupForm() {
       if (response.ok) {
         const responseData = await response.json();
         localStorage.setItem("user", JSON.stringify(responseData));
-        //navigate("/app"); 
+        navigate("/app"); 
       } else {
         const errorData = await response.json();
         setError(errorData.message || "Signup failed");
