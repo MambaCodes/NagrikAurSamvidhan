@@ -36,6 +36,7 @@ export function LoginForm() {
         const data = await response.json();
         //console.log(data); 
         localStorage.setItem("user", JSON.stringify(data));
+        navigate("/app");
       } else {
         const errorData = await response.json();
         setError(errorData.message || "Login failed");

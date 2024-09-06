@@ -1,33 +1,31 @@
-// Modules
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
-import { ThemeProvider } from "@/components/theme-provider"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "@/components/theme-provider";
 
 // PAGES
 
 // Auth Pages
-import { LoginForm } from "./pages/Auth/LoginForm"
-import { SignupForm } from "./pages/Auth/SignupForm"
-import { VerifyForm } from "./pages/Auth/VerifyForm"
+import { LoginForm } from "./pages/Auth/LoginForm";
+import { SignupForm } from "./pages/Auth/SignupForm";
+import { VerifyForm } from "./pages/Auth/VerifyForm";
 
 // Error pages
-import MaintenanceError from "./pages/error/maintenance-error"
-import GeneralError from "./pages/error/general-error"
-import NotFoundError from "./pages/error/not-found"
+import MaintenanceError from "./pages/error/maintenance-error";
+import GeneralError from "./pages/error/general-error";
+import NotFoundError from "./pages/error/not-found";
 
 // User Pages
 
-import LandingLayout from "./pages/Landing/LandingLayout"
-import LandingHome from "./pages/Landing/LandingHome"
-import MainLayout from "./pages/Main/MainLayout"
-import MainExplore from "./pages/Main/MainExplore"
-import V0About from "./components/V0/V0About"
-import LandingHow from "./components/About/LandingHow"
-import  LandingFAQ  from "./components/FAQ/LandingFAQ"
-import  Learning  from "./components/Learn/Learning"
-import  Content  from "./components/ChapterContent/Content"
-import Timeline from "./components/Timeline/TimeLine"
-import Roadmap from "./components/Roadmap/RoadMap"
-
+import LandingLayout from "./pages/Landing/LandingLayout";
+import LandingHome from "./pages/Landing/LandingHome";
+import MainLayout from "./pages/Main/MainLayout";
+import MainExplore from "./pages/Main/MainExplore";
+import V0About from "./components/V0/V0About";
+import LandingHow from "./components/About/LandingHow";
+import LandingFAQ from "./components/FAQ/LandingFAQ";
+import Learning from "./components/Learn/Learning";
+import Content from "./components/ChapterContent/Content";
+import Timeline from "./components/Timeline/TimeLine";
+import Roadmap from "./components/Roadmap/RoadMap";
 
 function App() {
   return (
@@ -35,35 +33,27 @@ function App() {
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <BrowserRouter>
           <Routes>
-
-            {/* Demo Page */}
-            {/* <Route path="/" element={<Navigate to="/signin" />} /> */}
-            
-            {/* Landing Page */} 
-            <Route path="/" element={<LandingLayout />} >
+            {/* Landing Page */}
+            <Route path="/" element={<LandingLayout />}>
               <Route path="" element={<Navigate to="/home" />} />
               <Route path="home" element={<LandingHome />} />
-              
               <Route path="about" element={<V0About />} />
-              
               <Route path="how" element={<LandingHow />} />
               <Route path="faqs" element={<LandingFAQ />} />
               <Route path="content" element={<Content />} />
             </Route>
 
-            {/* TODO: add check to verify If user is logged in */}
-            {/* currently using "app" route for ease of access */}
-
             {/* Main Application */}
-            <Route path="/app" element={<MainLayout />} >
+            <Route
+              path="/app"
+              element={localStorage.getItem("user") !== null? <MainLayout /> : <Navigate to="/signin" />}
+            >
               <Route path="" element={<Navigate to="explore" />} />
               <Route path="explore" element={<MainExplore />} />
               <Route path="learn" element={<Learning />} />
               <Route path="about" element={<V0About />} />
               <Route path="timeline" element={<Timeline />} />
               <Route path="roadmap" element={<Roadmap />} />
-              
-
             </Route>
 
             {/* Auth */}
@@ -74,7 +64,6 @@ function App() {
             <Route path="/reset-password" element={<Navigate to="/404" />} />
             <Route path="/change-password" element={<Navigate to="/404" />} />
 
-
             {/* Errors */}
             <Route path="/404" element={<NotFoundError />} />
             <Route path="/503" element={<MaintenanceError />} />
@@ -84,9 +73,8 @@ function App() {
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
