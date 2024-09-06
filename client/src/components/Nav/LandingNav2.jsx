@@ -132,8 +132,9 @@ return (
                 <div className="flex flex-col gap-2">
                     {item.href ? (
                     <Link
-                        href={item.href}
+                        to={item.href}
                         className="flex justify-between items-center"
+                        onClick={() => setOpen(false)}
                     >
                         <span className="text-lg">{item.title}</span>
                         <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
@@ -145,7 +146,7 @@ return (
                     item.items.map((subItem) => (
                         <Link
                         key={subItem.title}
-                        href={subItem.href}
+                        to={subItem.href}
                         className="flex justify-between items-center"
                         >
                         <span className="text-muted-foreground">
