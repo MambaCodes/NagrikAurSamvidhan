@@ -7,6 +7,7 @@ function LandingLayout() {
   return (
     <> 
     <LandingNav2/>
+    <div className="mt-12 md:mt-8"></div>
     <Outlet/>
     </>
   )
