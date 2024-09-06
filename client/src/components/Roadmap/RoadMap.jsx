@@ -7,14 +7,14 @@ const RoadMap = () => {
   };
 
   return (
-    <div className="timeline">
-      <div className="outer">
+    <div className="roadmap">
+      <div className="timeline">
         {Array.from({ length: 5 }).map((_, index) => (
           <div
             className="card"
             key={index}
-            onClick={() => handleCardClick(index)} // Handle click on card
-            style={{ cursor: 'pointer' }} // Add pointer cursor to indicate clickability
+            onClick={() => handleCardClick(index)}
+            style={{ cursor: 'pointer' }}
           >
             <div className="info">
               <h3 className="title">

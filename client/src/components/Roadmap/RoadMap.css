@@ -1,47 +1,54 @@
+/* Use more specific class names to avoid conflicts with Tailwind */
+
+/* Root variables for the roadmap component */
 :root {
-  --primary-color: #212121;
-  --background-color: #111;
-  --font: sans-serif;
+  --roadmap-primary-color: #212121;
+  --roadmap-background-color: #111;
+  --roadmap-font: sans-serif;
 }
 
-* {
+/* Reset margin and padding only within the roadmap */
+.roadmap * {
   margin: 0;
   padding: 0;
 }
 
-body {
-  background: var(--background-color);
-  font-family: var(--font);
+/* Style the roadmap container */
+.roadmap {
+  background: var(--roadmap-background-color);
+  font-family: var(--roadmap-font);
   display: flex;
   justify-content: center;
 }
 
-.timeline {
+.roadmap .timeline {
   background: transparent;
   margin: 20px auto;
   padding: 20px;
 }
 
-.card {
+.roadmap .card {
   position: relative;
   max-width: 60vw;
+  cursor: pointer;
 }
 
-.card:nth-child(odd) {
+.roadmap .card:nth-child(odd) {
   padding: 30px 0 30px 30px;
 }
-.card:nth-child(even) {
+
+.roadmap .card:nth-child(even) {
   padding: 30px 30px 30px 0;
 }
 
-.card::before {
+.roadmap .card::before {
   content: "";
   position: absolute;
   width: 50%;
   border: solid orangered;
 }
 
-.card:nth-child(odd)::before {
+.roadmap .card:nth-child(odd)::before {
   left: 0px;
   top: -4.5px;
   bottom: -4.5px;
@@ -50,13 +57,13 @@ body {
 }
 
 @media only screen and (max-width: 400px) {
-  .card:nth-child(odd)::before {
+  .roadmap .card:nth-child(odd)::before {
     top: -5px;
     bottom: -5px;
   }
 }
 
-.card:nth-child(even)::before {
+.roadmap .card:nth-child(even)::before {
   right: 0;
   top: 0;
   bottom: 0;
@@ -64,22 +71,23 @@ body {
   border-radius: 0 50px 50px 0;
 }
 
-.card:first-child::before {
+.roadmap .card:first-child::before {
   border-top: 0;
   border-top-left-radius: 0;
 }
 
-.card:last-child:nth-child(odd)::before {
+.roadmap .card:last-child:nth-child(odd)::before {
   border-bottom: 0;
   border-bottom-left-radius: 0;
 }
 
-.card:last-child:nth-child(even)::before {
+.roadmap .card:last-child:nth-child(even)::before {
   border-bottom: 0;
   border-bottom-right-radius: 0;
 }
 
-.info {
+/* Styling for the card content */
+.roadmap .info {
   display: flex;
   flex-direction: column;
   background: #333;
@@ -88,12 +96,12 @@ body {
   padding: 10px;
 }
 
-.title {
+.roadmap .title {
   color: orangered;
   position: relative;
 }
 
-.title::before {
+.roadmap .title::before {
   content: "";
   position: absolute;
   width: 10px;
@@ -103,14 +111,14 @@ body {
   border: 3px solid orangered;
 }
 
-.card:nth-child(even) > .info > .title {
+.roadmap .card:nth-child(even) .info .title {
   text-align: right;
 }
 
-.card:nth-child(odd) > .info > .title::before {
+.roadmap .card:nth-child(odd) .info .title::before {
   left: -45px;
 }
 
-.card:nth-child(even) > .info > .title::before {
+.roadmap .card:nth-child(even) .info .title::before {
   right: -45px;
 }
