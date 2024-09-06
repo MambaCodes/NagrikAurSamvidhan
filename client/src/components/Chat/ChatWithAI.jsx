@@ -1,16 +1,62 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { SendIcon, MenuIcon, ScaleIcon } from 'lucide-react'
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { SendIcon, ScaleIcon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-// Placeholder API function - replace this with your actual AI backend integration
+// Function to parse and format text
+function parseText(text) {
+  // Handle bold text
+  let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  
+  // Handle italic text
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  
+  // Handle code blocks
+  html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+  
+  // Handle inline code
+  html = html.replace(/`([^`]*)`/g, '<code>$1</code>');
+  
+  // Handle headers
+  html = html.replace(/^(#{1,6})\s*(.*)$/gm, (_, hashes, content) => {
+    const level = hashes.length;
+    return `<h${level}>${content}</h${level}>`;
+  });
+
+  // Handle unordered lists
+  html = html.replace(/^-\s(.*)$/gm, '<li>$1</li>');
+  html = html.replace(/(<li>.*<\/li>\n?)/g, '<ul>$&</ul>');
+  
+  // Handle ordered lists
+  html = html.replace(/^\d+\.\s(.*)$/gm, '<li>$1</li>');
+  html = html.replace(/(<li>.*<\/li>\n?)/g, '<ol>$&</ol>');
+  
+  // Wrap everything in a div
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+
+// Function to handle messages with context
 async function sendMessageToAI(message) {
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  return `AI response to: "${message}"`
+  const response = await fetch('http://127.0.0.1:5000/api/ask', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ question: message }),
+  });
+
+  const data = await response.json();
+  
+  if (response.ok) {
+    return data.answer;
+  } else {
+    throw new Error(data.error || 'Error fetching response. Please try again.');
+  }
 }
 
 export default function ChatWithAI() {
@@ -56,13 +102,15 @@ export default function ChatWithAI() {
       setIsLoading(false)
     }
   }
+
   const navigate = useNavigate();
+  
   return (
     <div className="flex flex-col h-screen bg-background">
       <header className="bg-primary text-primary-foreground p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold">ConstitutionAI</h1>
         <Button variant="ghost" size="icon">
-          <ScaleIcon className="h-6 w-6" onClick={()=>navigate("/app")}/>
+          <ScaleIcon className="h-6 w-6" onClick={() => navigate("/app")} />
         </Button>
       </header>
       <ScrollArea className="flex-grow p-4 overflow-y-auto" ref={scrollAreaRef}>
@@ -88,7 +136,7 @@ export default function ChatWithAI() {
                     message.sender === 'user' ? 'bg-primary text-primary-foreground' : 'bg-secondary'
                   }`}
                 >
-                  {message.text}
+                  {parseText(message.text)}
                 </motion.div>
               </div>
             </motion.div>
