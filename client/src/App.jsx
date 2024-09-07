@@ -1,5 +1,5 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 // PAGES
 
@@ -9,25 +9,24 @@ import { SignupForm } from "./pages/Auth/SignupForm";
 import { VerifyForm } from "./pages/Auth/VerifyForm";
 
 // Error pages
-import MaintenanceError from "./pages/error/maintenance-error";
 import GeneralError from "./pages/error/general-error";
+import MaintenanceError from "./pages/error/maintenance-error";
 import NotFoundError from "./pages/error/not-found";
 
 // User Pages
 
-import LandingLayout from "./pages/Landing/LandingLayout"
-import LandingHome from "./pages/Landing/LandingHome"
-import MainLayout from "./pages/Main/MainLayout"
-import MainExplore from "./pages/Main/MainExplore"
-import V0About from "./components/V0/V0About"
-import LandingHow from "./components/About/LandingHow"
-import  LandingFAQ  from "./components/FAQ/LandingFAQ"
-import  Learning  from "./components/Learn/Learning"
-import Timeline from "./components/Timeline/TimeLine"
-import Roadmap from "./components/Roadmap/RoadMap"
-import ChapterContent from "./components/ChapterContent/ChapterContent"
+import LandingHow from "./components/About/LandingHow";
+import ChapterContent from "./components/ChapterContent/ChapterContent";
 import ChatWithAI from "./components/Chat/ChatWithAI";
-
+import LandingFAQ from "./components/FAQ/LandingFAQ";
+import Learning from "./components/Learn/Learning";
+import Roadmap from "./components/Roadmap/RoadMap";
+import Timeline from "./components/Timeline/TimeLine";
+import V0About from "./components/V0/V0About";
+import LandingHome from "./pages/Landing/LandingHome";
+import LandingLayout from "./pages/Landing/LandingLayout";
+import MainExplore from "./pages/Main/MainExplore";
+import MainLayout from "./pages/Main/MainLayout";
 
 function App() {
   return (
@@ -47,7 +46,13 @@ function App() {
             {/* Main Application */}
             <Route
               path="/app"
-              element={localStorage.getItem("user") !== null? <MainLayout /> : <Navigate to="/signin" />}
+              element={
+                localStorage.getItem("user") !== null ? (
+                  <MainLayout />
+                ) : (
+                  <Navigate to="/signin" />
+                )
+              }
             >
               <Route path="" element={<Navigate to="explore" />} />
               <Route path="explore" element={<MainExplore />} />
@@ -55,7 +60,7 @@ function App() {
               <Route path="about" element={<V0About />} />
               <Route path="timeline" element={<Timeline />} />
               <Route path="roadmap" element={<Roadmap />} />
-              <Route path="content" element={<ChapterContent />} />
+              <Route path="content/:id/:ind" element={<ChapterContent />} />
             </Route>
             {/* Added this seprately, becuase the dock-based navbar was overlapping with this */}
             <Route path="app/ai" element={<ChatWithAI />} />
@@ -63,7 +68,10 @@ function App() {
             {/* Auth */}
             <Route path="/signin" element={<LoginForm />} />
             <Route path="/signup" element={<SignupForm />} />
-            <Route path="/verification-one-time-password" element={<VerifyForm />} />
+            <Route
+              path="/verification-one-time-password"
+              element={<VerifyForm />}
+            />
             <Route path="/forgot-password" element={<Navigate to="/404" />} />
             <Route path="/reset-password" element={<Navigate to="/404" />} />
             <Route path="/change-password" element={<Navigate to="/404" />} />
