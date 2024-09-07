@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Gamepad2,  Dice1, ChevronRight } from "lucide-react"
-
+import { Gamepad2, Dice1, ChevronRight } from "lucide-react"
 const games = [
   {
     id: 1,
@@ -11,6 +9,7 @@ const games = [
     description: "Test your knowledge of the constitution with this interactive quiz.",
     icon: <Gamepad2 className="h-6 w-6" />,
     color: "from-blue-500 to-purple-500",
+    path: "/quiz/index.html", 
   },
   {
     id: 2,
@@ -18,6 +17,7 @@ const games = [
     description: "Climb the ladders of justice and avoid the snakes of injustice in this constitutional twist on a classic game.",
     icon: <Dice1 className="h-6 w-6" />,
     color: "from-green-500 to-teal-500",
+    path: "/snakes-and-ladders/index.html", 
   },
   {
     id: 3,
@@ -25,9 +25,9 @@ const games = [
     description: "Match fundamental rights with their corresponding duties in this fast-paced game.",
     icon: <Gamepad2 className="h-6 w-6" />,
     color: "from-yellow-500 to-orange-500",
+    path: "/memory-matching-game/index.html", 
   },
 ]
-
 function GameCard({ game }) {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -45,23 +45,12 @@ function GameCard({ game }) {
       </CardHeader>
       <CardContent className="pt-4">
         <CardDescription className="text-sm mb-4">{game.description}</CardDescription>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-              Play Now
-              <ChevronRight className={`ml-2 h-4 w-4 transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''}`} />
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>{game.title}</DialogTitle>
-            </DialogHeader>
-            <div className="text-center py-10">
-              <p>Game content would go here.</p>
-              <p className="text-sm text-gray-500 mt-2">This is a placeholder for the actual game implementation.</p>
-            </div>
-          </DialogContent>
-        </Dialog>
+        <a href={game.path} target="_blank" rel="noopener noreferrer">
+          <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+            Play Now
+            <ChevronRight className={`ml-2 h-4 w-4 transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''}`} />
+          </Button>
+        </a>
       </CardContent>
     </Card>
   )
