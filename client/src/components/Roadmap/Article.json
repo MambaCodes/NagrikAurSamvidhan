@@ -1,0 +1,70 @@
+{
+    "articles": [
+      {
+        "title": "Article 1",
+        "paragraphs": [
+          "India, that is Bharat, shall be a Union of States. It highlights the official name of the country and its nature as a union of states.",
+          "The territory of India shall comprise the territories of the States, Union territories, and any acquired territories.",
+          "The states and the union territories of India form an integral part of the country, and no state has the right to secede."
+        ],
+        "games": [
+          "Quiz on the concept of 'Union of States'",
+          "Game about the territorial extent of India",
+          "Quiz on the territorial integration of Indian states"
+        ]
+      },
+      {
+        "title": "Article 2",
+        "paragraphs": [
+          "Empowers Parliament to admit new states into the Union of India and establish new states.",
+          "Parliament may by law admit new states into the Union or establish new states on such terms and conditions as it thinks fit.",
+          "This power gives flexibility for future expansion of India’s territory, whether by peaceful means or otherwise."
+        ],
+        "games": [
+          "Game about the procedure of admitting new states",
+          "Interactive quiz on the powers of Parliament in Article 2",
+          "Game on the flexibility for territorial expansion"
+        ]
+      },
+      {
+        "title": "Article 3",
+        "paragraphs": [
+          "Provides the procedure for the formation of new states and alteration of areas, boundaries, or names of existing states.",
+          "Parliament may by law form a new state, increase the area of any state, or alter the boundaries or names of any existing state.",
+          "A bill for this purpose can only be introduced with the recommendation of the President after consulting the concerned state legislature."
+        ],
+        "games": [
+          "Quiz on the process of altering state boundaries",
+          "Game related to boundary changes in Indian states",
+          "Quiz on the procedure for renaming states"
+        ]
+      },
+      {
+        "title": "Article 4",
+        "paragraphs": [
+          "Lays down that laws made for admission or establishment of new states, or altering the boundaries or names of existing states, are not considered amendments under Article 368.",
+          "Such laws require only a simple majority in Parliament, not a constitutional amendment.",
+          "This Article ensures that the reorganization of states can be done more easily, without requiring the complex procedure of a constitutional amendment."
+        ],
+        "games": [
+          "Game about the process of reorganization of states",
+          "Interactive quiz on laws related to state formation",
+          "Quiz on the reorganization of Indian territories"
+        ]
+      },
+      {
+        "title": "Article 5",
+        "paragraphs": [
+          "Deals with citizenship at the commencement of the Constitution.",
+          "It grants citizenship to people domiciled in India at the time of the commencement of the Constitution.",
+          "The provision includes people born in India, people residing in India for at least five years, and people of Indian origin."
+        ],
+        "games": [
+          "Quiz on citizenship under Article 5",
+          "Game related to Indian citizenship at commencement",
+          "Interactive quiz on domicile requirements for citizenship"
+        ]
+      }
+    ]
+  }
+  
