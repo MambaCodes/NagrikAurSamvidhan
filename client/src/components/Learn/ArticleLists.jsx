@@ -1,24 +1,31 @@
-import { useState } from 'react'
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { BookOpen, CheckCircle } from "lucide-react"
-import RoadMap from '../Roadmap/RoadMap'
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { BookOpen } from "lucide-react";
+import { useState } from "react";
+import RoadMap from "../Roadmap/RoadMap";
 
 // Mock data for articles
-const articles = [
-  { id: 1, title: "Article 14", description: "Equality before law", content: "The State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India." },
-  { id: 2, title: "Article 15", description: "Prohibition of discrimination", content: "The State shall not discriminate against any citizen on grounds only of religion, race, caste, sex, place of birth or any of them." },
-  { id: 3, title: "Article 16", description: "Equality of opportunity", content: "There shall be equality of opportunity for all citizens in matters relating to employment or appointment to any office under the State." },
-  { id: 4, title: "Article 17", description: "Abolition of Untouchability", content: "Untouchability is abolished and its practice in any form is forbidden. The enforcement of any disability arising out of Untouchability shall be an offence punishable in accordance with law." },
-  { id: 5, title: "Article 18", description: "Abolition of titles", content: "No title, not being a military or academic distinction, shall be conferred by the State." },
-]
+import articles from "@/components/ChapterContent/articles";
 
 // Roadmap component
-function Roadmap({ article }) {
+function Roadmap({ article, articleid }) {
   return (
     <div className="space-y-4 py-4">
-      <h3 className="text-lg font-semibold">Learning Roadmap for {article.title}</h3>
+      <h3 className="text-lg font-semibold">
+        Learning Roadmap for {article.title}
+      </h3>
       {/* <ul className="space-y-2">
         <li className="flex items-center">
           <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
@@ -37,13 +44,14 @@ function Roadmap({ article }) {
           Explore contemporary applications
         </li>
       </ul> */}
-      <RoadMap/>
+      <RoadMap article={article} articleid={article.id} />
     </div>
-  )
+  );
 }
 
 export default function ArticleList() {
-  const [selectedArticle, setSelectedArticle] = useState(null)
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  // console.log(articles);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -68,12 +76,12 @@ export default function ArticleList() {
               </DialogHeader>
               <ScrollArea className="h-[80vh] w-full rounded-md border p-4">
                 <p className="text-sm mb-4">{article.content}</p>
-                <Roadmap article={article} />
+                <Roadmap article={article} articleid={article.id} />
               </ScrollArea>
             </DialogContent>
           </Dialog>
         ))}
       </div>
     </div>
-  )
+  );
 }
