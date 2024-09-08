@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-
+import Timeline from "@/components/Timeline/TimeLine"
 export default function MainExplore() {
     return (
         <div className="flex flex-col items-center min-h-screen bg-background   p-4">
@@ -49,42 +49,42 @@ export default function MainExplore() {
             <div className="flex flex-col w-full max-w-6xl mt-8 py-12">
     <h2 className="text-2xl font-bold mb-4">PLAY ONLINE</h2>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-    <a href="https://example.com/game1">
+    <a href="/hangman-game/index.html">
         <img
             src="../src/images/hangman.jpg"
             alt="Game 1"
             className="w-full bg-muted h-60 rounded-md object-cover"
         />
         </a>
-        <a href="https://example.com/game1">
+        <a href="/snakes-and-ladders/index.html">
         <img
             src="../src/images/snakes.jpg"
             alt="Game 2"
             className="w-full bg-muted h-60 rounded-md object-cover"
         />
         </a>
-        <a href="https://example.com/game1">
+        <a href="/memory-matching-game/index.html">
         <img
             src="../src/images/match.jpg"
             alt="Game 3"
             className="w-full bg-muted h-60 rounded-md object-cover"
         />
         </a>
-        <a href="https://example.com/game1">
+        <a href="/math_game/index.html">
         <img
             src="../src/images/maths.avif"
             alt="Game 4"
             className="w-full bg-muted h-60 rounded-md object-cover"
         />
         </a>
-        <a href="https://example.com/game1">
+        <a href="/Golf-Educational-Game/index.html">
         <img
             src="../src/images/minigolf.webp"
             alt="Game 5"
             className="w-full bg-muted h-60 rounded-md object-cover"
         />
         </a>
-        <a href="https://example.com/game1">
+        <a href="/quiz/index.html">
         <img
             src="../src/images/quiz.webp"
             alt="Game 6"
@@ -93,6 +93,7 @@ export default function MainExplore() {
         </a>
     </div>
 </div>
+<Timeline></Timeline>
     </div>
     )
 }
